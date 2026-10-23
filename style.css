@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background: url(vector-valentines-day-seamless-pink-background-with-heart-shape-pattern-horizontally-repeatable_8130-1838.avif);
+    margin: 0;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.open-btn {
+    margin-top: 400px;
+    background: rgb(255, 225, 240);
+    border: 3px solid rgb(255, 129, 238);
+    box-shadow: 0 0 60px #ef44b6;
+    border-radius: 40px;
+    padding: 20px 40px;
+    font-weight: 900;
+    cursor: pointer;
+} 
+
+/* Оверлей */
+.popup {
+  position: fixed;
+  inset: 0;                    /* top/right/bottom/left: 0 */
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  /* Для плавного появления */
+  opacity: 0;
+  visibility: hidden;          /* ⚠️ не display: none */
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.is-open.popup {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Само окно */
+.popup__content {
+  background: #fd60b7;
+  box-shadow: 0 0 60px #ef44b6;;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 80%;
+  position: relative;
+
+  /* Анимация "выезжает" */
+  transform: translateY(-20px);
+  transition: transform 0.3s;
+}
+
+.is-open.popup .popup__content { /*НЕ ОБЯЗАТЕЛЬНО */
+  transform: translateY(0);
+}
+
+.popup__close {
+  position: absolute;
+  top: 7px;
+  right: 12px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
